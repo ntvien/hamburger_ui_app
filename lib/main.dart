@@ -13,6 +13,10 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         appBarTheme: AppBarTheme(color: Colors.teal, centerTitle: true),
+        bottomAppBarColor: Colors.teal,
+        floatingActionButtonTheme: FloatingActionButtonThemeData(
+          backgroundColor: Colors.orange,
+        ),
       ),
       home: HamburgerScreen(),
     );
