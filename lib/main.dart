@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app_hamberger/hambuger_screen.dart';
-import 'header.dart';
+import 'package:flutter_app_hamberger/screen/hambuger_screen.dart';
+import 'widgets/header.dart';
 
 void main() {
   runApp(MyApp());
@@ -12,7 +12,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
+        primaryColor: Colors.teal,
         appBarTheme: AppBarTheme(color: Colors.teal, centerTitle: true),
+        cardColor: Colors.white,
         bottomAppBarColor: Colors.teal,
         floatingActionButtonTheme: FloatingActionButtonThemeData(
           backgroundColor: Colors.orange,
