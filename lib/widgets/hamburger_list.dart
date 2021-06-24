@@ -1,7 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_app_hamberger/screen/hamburger_detail_screen.dart';
 
 class HamburgerList extends StatefulWidget {
+  final int? row;
+  HamburgerList({this.row});
+
   @override
   _HamburgerListState createState() => _HamburgerListState();
 }
@@ -13,40 +17,42 @@ class _HamburgerListState extends State<HamburgerList> {
 
     Widget _buildBaconImage() {
       return Container(
-        height: 100,
-        width: 100,
+        height: 85,
+        width: 85,
         child: Image.asset("images/bacon_burger.jpg"),
       );
     }
 
     Widget _buildChickenImage() {
       return Container(
-        height: 120,
-        width: 120,
+        height: 100,
+        width: 100,
         child: Image.asset("images/chicken_burger.jpg"),
       );
     }
 
     return SliverToBoxAdapter(
       child: Container(
-        height: 200,
+        height: widget.row == 2 ? 265 : 210,
         margin: EdgeInsets.only(top: 10),
         child: ListView.builder(
           itemCount: items,
           scrollDirection: Axis.horizontal,
           itemBuilder: (context, index) {
-            bool reverse = index.isEven;
+            bool reverse = widget.row == 2 ? index.isEven : index.isOdd;
             return Stack(
               children: [
                 Container(
                   height: 200,
-                  width: 200,
+                  width: 190,
                   margin: EdgeInsets.only(
-                    left: 20,
+                    left: 10,
                     right: index == items ? 20 : 0,
                   ),
                   child: GestureDetector(
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.of(context).pushNamed(HamburgerDetail.tag);
+                    },
                     child: Card(
                       color: Theme.of(context).primaryColor,
                       child: Padding(
@@ -54,7 +60,7 @@ class _HamburgerListState extends State<HamburgerList> {
                         child: Column(
                           children: [
                             Text(
-                              "Burger",
+                              reverse ? "Chicken Burger" : "Bacon Burger",
                               style: TextStyle(
                                 fontSize: 20,
                                 fontWeight: FontWeight.bold,
@@ -65,11 +71,13 @@ class _HamburgerListState extends State<HamburgerList> {
                             Row(
                               children: [
                                 Spacer(),
+                                Spacer(),
                                 Text(
                                   "15,95 \$ USA",
                                   style: TextStyle(
                                     fontWeight: FontWeight.bold,
                                     color: Colors.white,
+                                    fontSize: 16,
                                   ),
                                 ),
                                 Spacer(),
@@ -101,13 +109,19 @@ class _HamburgerListState extends State<HamburgerList> {
                     ),
                   ),
                 ),
-                Positioned(
-                  top: reverse ? 50 : 50,
-                  child: GestureDetector(
-                    onTap: () {},
-                    child: reverse
-                        ? _buildChickenImage()
-                        : _buildBaconImage(),
+                Container(
+                  padding: reverse
+                      ? EdgeInsets.only(left: 55, top: 55)
+                      : EdgeInsets.only(left: 65, top: 60),
+                  child: Positioned(
+                    top: reverse ? 50 : 50,
+                    child: GestureDetector(
+                      onTap: () {
+                        Navigator.of(context).pushNamed(HamburgerDetail.tag);
+                      },
+                      child:
+                          reverse ? _buildChickenImage() : _buildBaconImage(),
+                    ),
                   ),
                 ),
               ],
