@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app_hamberger/screen/hambuger_screen.dart';
+import 'package:flutter_app_hamberger/screen/hamburger_detail_screen.dart';
 import 'widgets/header.dart';
 
 void main() {
@@ -21,6 +22,9 @@ class MyApp extends StatelessWidget {
         ),
       ),
       home: HamburgerScreen(),
+      routes: {
+        HamburgerDetail.tag: (_) => HamburgerDetail()
+      },
     );
   }
 }
