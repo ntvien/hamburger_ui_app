@@ -19,7 +19,7 @@ class _HeaderState extends State<Header> {
                 children: [
                   Container(
                     padding: EdgeInsets.symmetric(horizontal: 15),
-                    height: size.height / 5,
+                    height: size.height / 5.2,
                     decoration: BoxDecoration(
                       color: Colors.teal,
                       borderRadius: BorderRadius.vertical(
@@ -31,7 +31,7 @@ class _HeaderState extends State<Header> {
                     ),
                     child: Column(
                       children: [
-                        SizedBox(height: 20),
+                        SizedBox(height: 15),
                         Row(
                           children: [
                             CircleAvatar(
@@ -65,7 +65,7 @@ class _HeaderState extends State<Header> {
                                     child: Text(
                                       "GOLD MEMBER",
                                       style: TextStyle(
-                                        fontSize: 14,
+                                        fontSize: 13,
                                         color: Colors.yellow,
                                       ),
                                     ),
