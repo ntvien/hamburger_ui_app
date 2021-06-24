@@ -1,7 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_app_hamberger/categories.dart';
-import 'package:flutter_app_hamberger/header.dart';
+import 'package:flutter_app_hamberger/widgets/categories.dart';
+import 'package:flutter_app_hamberger/widgets/hamburger_list.dart';
+import 'package:flutter_app_hamberger/widgets/header.dart';
 
 class HamburgerScreen extends StatefulWidget {
   @override
@@ -30,14 +31,7 @@ class _HamburgerScreenState extends State<HamburgerScreen> {
           ),
           Header(),
           Categories(),
-          SliverList(
-            delegate: SliverChildListDelegate([
-              Text(
-                "Hamburger",
-                style: TextStyle(fontSize: 200),
-              ),
-            ]),
-          ),
+          HamburgerList(),
         ],
       ),
       extendBody: true,
