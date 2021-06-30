@@ -19,7 +19,7 @@ class _HamburgerListState extends State<HamburgerList> {
       return Container(
         height: 85,
         width: 85,
-        child: Image.asset("images/bacon_burger.jpg"),
+        child: Image.asset("images/bacon_burger.png"),
       );
     }
 
@@ -27,7 +27,7 @@ class _HamburgerListState extends State<HamburgerList> {
       return Container(
         height: 100,
         width: 100,
-        child: Image.asset("images/chicken_burger.jpg"),
+        child: Image.asset("images/chicken_burger.png"),
       );
     }
 
