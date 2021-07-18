@@ -1,4 +1,3 @@
-// @dart=2.9
 import 'package:flutter/material.dart';
 import 'package:flutter_app_hamberger/screen/hambuger_screen.dart';
 import 'package:flutter_app_hamberger/screen/hamburger_detail_screen.dart';
